@@ -107,5 +107,14 @@ namespace Bingo.Repositories
 
             return new Carton();
         }
+
+        public int LanzarBolilla()
+        {
+            int min = 1;
+            int max = 90;
+
+            Random rnd = new Random();
+            return rnd.Next(min, max + 1);
+        }
     }
 }
