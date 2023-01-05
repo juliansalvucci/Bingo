@@ -1,111 +1,131 @@
 ﻿using Bingo.Models;
+using System;
 
 namespace Bingo.Repositories
 {
     public class BingoRepository
     {
-        public Carton CrearCarton()
+        public int[,]  CrearCarton()
         {
-            var bingo = new int[3, 9];
+            var carton = new int[3, 9];
 
-            var columnas1 = 3;
-            var columnas2 = 6;
-            int[] filas = new int[3];
-            filas[0] = 0;
-            filas[1] = 0;
-            filas[2] = 0;
+            var random = new Random();
 
-            for (int i = 0; i < 9; i++)
+
+            //GENERACIÓN DE NÚMEROS PARA CARTÓN
+            for (var columna = 0; columna < 9; columna++)
             {
-                var min = 0;
-                var max = 0;
-
-                int maxValue = filas.Max();
-                int maxIndex = filas.ToList().IndexOf(maxValue);
-
-                switch (i)
+                for (var fila = 0; fila < 3; fila++)
                 {
-                    case 0:
-                        min = 1;
-                        max = 10;
-                        break;
-                    case 8:
-                        min = 80;
-                        max = 91;
-                        break;
-                    default:
-                        min = i * 10;
-                        max = i * 20;
-                        break;
-                }
+                    var nuevoNumero = 0;
+                    var nuevoEncontrado = false;
 
-                var columna = new Random().Next(1, 3);
-
-                if (columna == 1 && columnas1 > 0)
-                {
-                    columnas1--;
-
-                    var fila = new Random().Next(0, 3);
-
-                    while (filas[fila] == 5 || fila == maxIndex)
+                    while (!nuevoEncontrado) //Mientras el número no exista
                     {
-                        fila = new Random().Next(0, 3);
+                        if (columna == 0) //Columna 1
+                        {
+                            nuevoNumero = random.Next(1, 10);
+                        }
+                        else if (columna == 8) //Columna 9
+                        {
+                            nuevoNumero = random.Next(80, 91);
+                        }
+                        else //Otras columnas
+                        {
+                            nuevoNumero = random.Next(columna * 10, columna * 10 + 10);
+                        }
+
+                        //Buscamos si el número existe en la columna.
+                        nuevoEncontrado = true;
+                        for (var filaActual = 0; filaActual < 3; filaActual++)
+                        {
+                            if (carton[filaActual, columna] == nuevoNumero)
+                            {
+                                nuevoEncontrado = false;
+                                break;
+                            }
+                        }
                     }
-
-                    filas[fila]++;
-
-                    var valor = new Random().Next(min, max);
-
-                    bingo[fila, i] = valor;
-                }
-                else
-                {
-                    if (i == 8)
-                    {
-                        Console.WriteLine();
-                    }
-
-                    columnas2--;
-
-                    var fila = new Random().Next(0, 3);
-
-                    while (filas[fila] == 5 || fila == maxIndex)
-                    {
-                        fila = new Random().Next(0, 3);
-                    }
-
-                    filas[fila]++;
-
-                    var valor = new Random().Next(min, max);
-
-                    bingo[fila, i] = valor;
-
-                    var fila2 = new Random().Next(0, 3);
-
-                    while (filas[fila2] == 5 || fila2 == maxIndex)
-                    {
-                        fila2 = new Random().Next(0, 3);
-                    }
-
-                    filas[fila2]++;
-
-                    var valor2 = new Random().Next(min, max);
-
-                    bingo[fila2, i] = valor2;
+                    carton[fila, columna] = nuevoNumero;
                 }
             }
 
-            for (int i = 0; i < 3; i++)
+            var c = GenerarVacios(carton);
+
+            return c;
+        }
+
+        public int[,] GenerarVacios(int[,] carton)
+        {
+            var random = new Random();
+
+            var borrados = 0;
+
+            while (borrados < 12)
             {
-                for (int x = 0; x < 9; x++)
+                var filaABorrar = random.Next(0, 3);
+                var columnaABorrar = random.Next(0, 9);
+
+                if (carton[filaABorrar, columnaABorrar] == 0) //Si el valor en esa posición es 0, ya esta.
                 {
-                    Console.WriteLine($"{i} {x} = " + bingo[i, x]);
+                    continue; //Se resetea el while.
                 }
 
-                Console.WriteLine();
+                //contar 0s
+                var cerosEnFila = 0;
+                for (var c = 0; c < 9; c++)
+                {
+                    if (carton[filaABorrar, c] == 0)
+                    {
+                        cerosEnFila++;
+                    }
+                }
+
+                var cerosEnColumna = 0;
+                for (var f = 0; f < 3; f++)
+                {
+                    if (carton[f, columnaABorrar] == 0)
+                    {
+                        cerosEnColumna++;
+                    }
+                }
+
+                var itemsPorColumna = new int[9];
+                for (var c = 0; c < 9; c++)
+                {
+                    for (var f = 0; f < 3; f++)
+                    {
+                        if (carton[f, c] != 0)
+                        {
+                            itemsPorColumna[c]++;
+                        }
+                    }
+                }
+
+                var columnasConUnSoloNumero = 0;
+                for (var c = 0; c < 9; c++)
+                {
+                    if (itemsPorColumna[c] == 1)
+                    {
+                        columnasConUnSoloNumero++;
+                    }
+                }
+
+                if (cerosEnFila == 4 || cerosEnColumna == 2)
+                {
+                    continue;
+                }
+
+                if (columnasConUnSoloNumero == 3 && itemsPorColumna[columnaABorrar] != 3)
+                {
+                    continue;
+                }
+
+                carton[filaABorrar, columnaABorrar] = 0;
+                borrados++;
             }
 
-            return new Carton();
+            return carton;
         }
 
         public int LanzarBolilla()
@@ -115,6 +135,12 @@ namespace Bingo.Repositories
 
             Random rnd = new Random();
             return rnd.Next(min, max + 1);
+        }
+
+        public void Sortear(int[,] carton)
+        {
+            var bolilla = LanzarBolilla();
+            //BUSCAR
         }
     }
 }
