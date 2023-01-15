@@ -18,7 +18,15 @@ body {
 }
 
 .celdaCarton {
-    color:white;
-    background-color:cornflowerblue;
+    color:black;
+    background-color:white;
     border-color:black;
+    display:flex;
+}
+
+.celdaVacia {
+    color: cornflowerblue;
+    background-color: cornflowerblue;
+    border-color: black;
+    display: flex;
 }

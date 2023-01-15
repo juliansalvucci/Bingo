@@ -4,14 +4,15 @@
 }
 
 <div class="container text-center">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-        <div class="col celdaCarton">Column</div>
-        <div class="col">Column</div>
-        <div class="col">Column</div>
-        <div class="col">Column</div>
-    </div>
     @foreach (var item in Model)
     {
-        <div>@item</div>
+        if(item == 0)
+        {
+            <div class="col celdaVacia">""</div>
+        }
+        else
+        {
+            <div class="col celdaCarton">@item</div>
+        }
     }
 </div>
