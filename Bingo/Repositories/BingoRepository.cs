@@ -5,7 +5,7 @@ namespace Bingo.Repositories
 {
     public class BingoRepository
     {
-        public int[,]  CrearCarton()
+        public List<int>  CrearCarton()
         {
             var carton = new int[3, 9];
 
@@ -50,9 +50,18 @@ namespace Bingo.Repositories
                 }
             }
 
-            var c = GenerarVacios(carton);
+            var cartonConEspaciosVacios = GenerarVacios(carton);
+            var cartonEnLista = new List<int>();
 
-            return c;
+            for (var columna = 0; columna < 9; columna++)
+            {
+                for (var fila = 0; fila < 3; fila++)
+                {
+                    cartonEnLista.Add(cartonConEspaciosVacios[fila, columna]);
+                }
+            }
+
+            return cartonEnLista;
         }
 
         public int[,] GenerarVacios(int[,] carton)
@@ -137,10 +146,11 @@ namespace Bingo.Repositories
             return rnd.Next(min, max + 1);
         }
 
-        public void Sortear(int[,] carton)
+        public void Sortear(List<int> carton)
         {
             var bolilla = LanzarBolilla();
-            //BUSCAR
+
+            carton.Contains(bolilla);
         }
     }
 }

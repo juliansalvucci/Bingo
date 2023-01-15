@@ -16,3 +16,9 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.celdaCarton {
+    color:white;
+    background-color:cornflowerblue;
+    border-color:black;
+}
