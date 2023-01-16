@@ -5,12 +5,11 @@ namespace Bingo.Repositories
 {
     public class BingoRepository
     {
-        public List<int>  CrearCarton()
+        public List<int> CrearCarton()
         {
             var carton = new int[3, 9];
 
             var random = new Random();
-
 
             //GENERACIÓN DE NÚMEROS PARA CARTÓN
             for (var columna = 0; columna < 9; columna++)

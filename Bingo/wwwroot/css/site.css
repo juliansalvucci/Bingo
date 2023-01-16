@@ -17,14 +17,30 @@ body {
   margin-bottom: 60px;
 }
 
+.carton {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto;
+    width: 88%;
+    margin: 0 auto;
+}
+
 .celdaCarton {
-    color:black;
-    background-color:white;
-    border-color:black;
+    color: black;
+    background-color: white;
+    border-color: black;
+    max-width: 100px;
+    max-height: 200px;
+    border-style: solid;
 }
 
 .celdaVacia {
     color: cornflowerblue;
     background-color: cornflowerblue;
     border-color: black;
+    max-width: 100px;
+    max-height: 200px;
+    border-style: solid;
 }
+
+
+
