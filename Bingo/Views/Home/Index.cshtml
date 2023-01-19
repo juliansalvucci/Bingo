@@ -1,4 +1,4 @@
-﻿@model int[,]
+﻿@model int[,] 
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -14,6 +14,34 @@
        {
            <div class="celdaCarton">@item</div>
        }
+    }
+</div>
+<br/>
+<div class="text-center carton">
+    @foreach (var item in Model)
+    {
+        @if (item == 0)
+        {
+            <div class="celdaVacia">""</div>
+        }
+        else
+        {
+            <div class="celdaCarton">@item</div>
+        }
+    }
+</div>
+<br />
+<div class="text-center carton">
+    @foreach (var item in Model)
+    {
+        @if (item == 0)
+        {
+            <div class="celdaVacia">""</div>
+        }
+        else
+        {
+            <div class="celdaCarton">@item</div>
+        }
     }
 </div>
 
