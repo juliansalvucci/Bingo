@@ -5,7 +5,7 @@ namespace Bingo.Repositories
 {
     public class BingoRepository
     {
-        public List<int> CrearCarton()
+        public int[,] CrearCarton()
         {
             var carton = new int[3, 9];
 
@@ -60,7 +60,7 @@ namespace Bingo.Repositories
                 }
             }
 
-            return cartonEnLista;
+            return cartonConEspaciosVacios;
         }
 
         public int[,] GenerarVacios(int[,] carton)

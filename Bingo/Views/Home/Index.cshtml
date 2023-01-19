@@ -1,4 +1,4 @@
-﻿@model List<int>
+﻿@model int[,]
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -6,17 +6,20 @@
 <div class="text-center carton">
     @foreach (var item in Model)
     {
-        if(item == 0)
-        {
-           <div class="col celdaVacia">""</div>
-        }
-        else
-        {
-           <div class="col celdaCarton">@item</div>
-        }
+       @if (item == 0)
+       {
+           <div class="celdaVacia">""</div>
+       }
+       else
+       {
+           <div class="celdaCarton">@item</div>
+       }
     }
 </div>
+
 <br/>
 <div>
     <button type="button" class="btn btn-primary">Sortear</button>
+    <label>LABEL</label>
 </div>
+

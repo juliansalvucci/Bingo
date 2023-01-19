@@ -4,7 +4,7 @@ namespace Bingo.Services
 {
     public class BingoService : IBingoService
     {
-        public List<int> CrearCarton()
+        public int[,] CrearCarton()
         {
             var repository = new BingoRepository();
             var carton = repository.CrearCarton();

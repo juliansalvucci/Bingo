@@ -2,6 +2,6 @@
 {
     public interface IBingoService
     {
-        List<int> CrearCarton();
+        int[,] CrearCarton();
     }
 }

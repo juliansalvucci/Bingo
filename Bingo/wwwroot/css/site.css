@@ -21,25 +21,28 @@ body {
     display: grid;
     grid-template-columns: auto auto auto auto auto auto auto auto auto;
     width: 88%;
-    margin: 0 auto;
+    margin: 0;
 }
 
 .celdaCarton {
     color: black;
+    font-weight: bold;
     background-color: white;
     border-color: black;
-    max-width: 100px;
+    max-width: 70px;
     max-height: 200px;
     border-style: solid;
+    margin: 0px;
 }
 
 .celdaVacia {
     color: cornflowerblue;
     background-color: cornflowerblue;
     border-color: black;
-    max-width: 100px;
+    max-width: 70px;
     max-height: 200px;
     border-style: solid;
+    margin:0px
 }
 
 
