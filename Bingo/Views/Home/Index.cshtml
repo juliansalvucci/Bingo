@@ -1,14 +1,15 @@
-﻿@model int[,] 
+﻿@using Bingo.ViewModels;
+@model CartonViewModel
 @{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center carton">
-    @foreach (var item in Model)
+    @foreach (var item in Model.Carton1)
     {
        @if (item == 0)
        {
-           <div class="celdaVacia">""</div>
+           <div class="celdaVacia"></div>
        }
        else
        {
@@ -18,11 +19,11 @@
 </div>
 <br/>
 <div class="text-center carton">
-    @foreach (var item in Model)
+    @foreach (var item in Model.Carton2)
     {
         @if (item == 0)
         {
-            <div class="celdaVacia">""</div>
+            <div class="celdaVacia"></div>
         }
         else
         {
@@ -32,11 +33,11 @@
 </div>
 <br />
 <div class="text-center carton">
-    @foreach (var item in Model)
+    @foreach (var item in Model.Carton3)
     {
         @if (item == 0)
         {
-            <div class="celdaVacia">""</div>
+            <div class="celdaVacia"></div>
         }
         else
         {
@@ -47,7 +48,11 @@
 
 <br/>
 <div>
-    <button type="button" class="btn btn-primary">Sortear</button>
-    <label>LABEL</label>
+    <button type="button" class="btn btn-primary" onclick="script">Sortear</button>
+    <label id="label1"></label>
 </div>
 
+@section Scripts{
+    <script type="text/javascript" src="~/js/site.js"></script>
+}
+   

@@ -1,30 +1,27 @@
 ﻿using Bingo.Models;
 using Bingo.Services;
+using Bingo.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 using System.Diagnostics;
 
 namespace Bingo.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-        private readonly IConfiguration _configuration;
         private readonly IBingoService _bingoService;
 
-
-        public HomeController(ILogger<HomeController> logger, IConfiguration configuration, IBingoService bingoService)
+        public HomeController(IBingoService bingoService)
         {
-            _logger = logger;
-            _configuration = configuration;
             _bingoService = bingoService;
         }
 
-
         public IActionResult Index()
         {
-            var carton = _bingoService.CrearCarton();
-            return View(carton);
+            var viewModel = new CartonViewModel();
+            viewModel.Carton1 = _bingoService.CrearCarton();
+            viewModel.Carton2 = _bingoService.CrearCarton();
+            viewModel.Carton3 = _bingoService.CrearCarton();
+            return View(viewModel);
         }
 
         public IActionResult Privacy()

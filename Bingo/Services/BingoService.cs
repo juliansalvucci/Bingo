@@ -10,5 +10,12 @@ namespace Bingo.Services
             var carton = repository.CrearCarton();
             return carton;
         }
+
+        public int LanzarBolilla() 
+        { 
+            var repository = new BingoRepository();
+            var bolilla = repository.LanzarBolilla();
+            return bolilla;
+        }
     }
 }
