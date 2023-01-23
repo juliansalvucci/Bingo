@@ -4,9 +4,15 @@
 // Write your JavaScript code.
 
 async function test() {
-    console.log("TROLOOOOO")
     const label = document.getElementById("label1");
-    label.innerHTML = Math.random() * (90 - 0) + 0;
+    const numero = Math.random(90,1);
+    label.innerHTML = Math.round(numero);
 }
 
-test()
+test();
+
+async function getCarton(carton) {
+    console.log(carton);
+}
+
+getCarton();
