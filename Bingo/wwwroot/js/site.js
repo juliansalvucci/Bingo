@@ -15,7 +15,7 @@ async function getCarton() {
 
     
     
-        let lista = document.getElementById("carton3").nodeValue
+        let lista = document.getElementById("carton3")
         console.log(lista);
 
     
