@@ -5,14 +5,23 @@
 
 async function test() {
     const label = document.getElementById("label1");
-    const numero = Math.random(90,1);
-    label.innerHTML = Math.round(numero);
+    const numero = Math.random() * (90-0);
+    label.innerHTML = numero.toFixed(0);
 }
 
 test();
 
-async function getCarton(carton) {
-    console.log(carton);
+async function getCarton() {
+
+    
+    
+        let lista = document.getElementById("carton3").nodeValue
+        console.log(lista);
+
+    
+
+    
+    
 }
 
 getCarton();
