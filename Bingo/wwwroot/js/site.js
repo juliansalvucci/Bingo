@@ -12,20 +12,11 @@ async function test() {
 test();
 
 async function getCarton() {
-
-
     const lista = Array.from(document.getElementsByClassName('celdaCarton'))
     console.log(lista)
     for (let i = 0; i < lista.length; i++) {
         console.log(lista[i].outerText)
     }
-    //const numero = lista.children.item("celdaCarton")
-    //console.log(numero.getAttribute("value"));
-
-    
-
-    
-    
 }
 
 getCarton();
