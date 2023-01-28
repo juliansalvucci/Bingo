@@ -32,19 +32,23 @@
     }
 </div>
 <br />
-<div class="text-center carton" id="carton3">
+
+
+<label class="text-center carton" id="carton3" value=@Model.Carton3>
+
     @foreach (var item in Model.Carton3)
     {
         @if (item == 0)
         {
-            <div class="celdaVacia"></div>
+            <label class="celdaVacia"></label>
         }
         else
         {
-            <div class="celdaCarton">@item</div>
+            <label class="celdaCarton" value=@item>@item</label>
         }
+
     }
-</div>
+</label>
 
 <br/>
 <div>

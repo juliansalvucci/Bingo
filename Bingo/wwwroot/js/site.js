@@ -13,10 +13,14 @@ test();
 
 async function getCarton() {
 
-    
-    
-        let lista = document.getElementById("carton3")
-        console.log(lista);
+
+    const lista = Array.from(document.getElementsByClassName('celdaCarton'))
+    console.log(lista)
+    for (let i = 0; i < lista.length; i++) {
+        console.log(lista[i].outerText)
+    }
+    //const numero = lista.children.item("celdaCarton")
+    //console.log(numero.getAttribute("value"));
 
     
 
