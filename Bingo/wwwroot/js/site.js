@@ -5,18 +5,22 @@
 
 async function test() {
     const label = document.getElementById("label1");
-    const numero = Math.random() * (90-0);
-    label.innerHTML = numero.toFixed(0);
+    const numero = Math.random() * (90 - 0);
+    const bolilla = numero.toFixed(0);
+    label.innerHTML = bolilla;
+    getCarton(bolilla);
+
 }
 
 test();
 
-async function getCarton() {
+async function getCarton(bolilla) {
     const lista = Array.from(document.getElementsByClassName('celdaCarton'))
     console.log(lista)
     for (let i = 0; i < lista.length; i++) {
-        console.log(lista[i].outerText)
+        if (bolilla == lista[i].innerText) {
+            lista[i].style.backgroundColor = 'rgb(255, 87, 51)';
+        }
     }
 }
 
-getCarton();
