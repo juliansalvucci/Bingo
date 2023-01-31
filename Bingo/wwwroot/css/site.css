@@ -17,7 +17,7 @@ body {
   margin-bottom: 60px;
 }
 
-.carton {
+.carton1, .carton2, .carton3 {
     display: grid;
     grid-template-columns: auto auto auto auto auto auto auto auto auto;
     grid-row-gap: 0px;
@@ -26,7 +26,7 @@ body {
     margin: 0;
 }
 
-.celdaCarton {
+.celdaCarton1, .celdaCarton2, .celdaCarton3 {
     color: black;
     font-weight: bold;
     background-color: white;
@@ -37,14 +37,14 @@ body {
     margin: 0px;
 }
 
-.celdaVacia {
+.celdaVaciaCarton1, .celdaVaciaCarton2, .celdaVaciaCarton3 {
     color: cornflowerblue;
     background-color: cornflowerblue;
     border-color: black;
     max-width: 200px;
     max-height: 400px;
     border-style: solid;
-    margin:0px
+    margin: 0px
 }
 
 

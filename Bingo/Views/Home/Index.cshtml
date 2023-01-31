@@ -4,56 +4,52 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center carton">
+<div class="text-center carton1">
     @foreach (var item in Model.Carton1)
     {
        @if (item == 0)
        {
-           <div class="celdaVacia"></div>
+           <div class="celdaVaciaCarton1"></div>
        }
        else
        {
-           <div class="celdaCarton">@item</div>
+           <div class="celdaCarton1">@item</div>
        }
     }
 </div>
 <br/>
-<div class="text-center carton">
+<div class="text-center carton2">
     @foreach (var item in Model.Carton2)
     {
         @if (item == 0)
         {
-            <div class="celdaVacia"></div>
+            <div class="celdaVaciaCarton2"></div>
         }
         else
         {
-            <div class="celdaCarton">@item</div>
+            <div class="celdaCarton2">@item</div>
         }
     }
 </div>
 <br />
-
-
-<label class="text-center carton" id="carton3" value=@Model.Carton3>
-
+<label class="text-center carton3">
     @foreach (var item in Model.Carton3)
     {
         @if (item == 0)
         {
-            <label class="celdaVacia"></label>
+            <label class="celdaVaciaCarton3"></label>
         }
         else
         {
-            <label class="celdaCarton" value=@item>@item</label>
+            <label class="celdaCarton3" value="SinSalir">@item</label>
         }
-
     }
 </label>
-
 <br/>
 <div>
     <button type="button" class="btn btn-primary" onclick="test()">Sortear</button>
     <label id="label1"></label>
+    <label id="label2"></label>
 </div>
 
 @section Scripts{
