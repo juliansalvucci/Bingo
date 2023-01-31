@@ -1,4 +1,4 @@
-﻿let lista = Array.from(document.getElementsByClassName('celdaCarton3'))
+﻿const lista = Array.from(document.getElementsByClassName('celdaCarton3'))
 
 async function test() {
     const label = document.getElementById("label1");
