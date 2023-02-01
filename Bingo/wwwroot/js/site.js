@@ -1,7 +1,13 @@
-﻿const lista = Array.from(document.getElementsByClassName('celdaCarton3'))
+﻿const carton1 = Array.from(document.getElementsByClassName('celdaCarton1'));
+const carton2 = Array.from(document.getElementsByClassName('celdaCarton2'));
+const carton3 = Array.from(document.getElementsByClassName('celdaCarton3'));
+const labelCarton1 = document.getElementById("labelCarton1");
+const labelCarton2 = document.getElementById("labelCarton2");
+const labelCarton3 = document.getElementById("labelCarton3");
+const label = document.getElementById("label1");
+
 
 async function test() {
-    const label = document.getElementById("label1");
     const numero = Math.random() * (90 - 0);
     const bolilla = numero.toFixed(0);
     label.innerHTML = bolilla;
@@ -10,12 +16,33 @@ async function test() {
 
 
 async function getCarton(bolilla) {
-    for (let i = 0; i < lista.length; i++) {
-        if (bolilla == lista[i].outerText) {
-            lista[i].style.backgroundColor = 'rgb(255, 87, 51)';
-            lista.splice(i, 1)
-            if (lista.length === 0) {
-                console.log('GANASTE')
+
+    for (let i = 0; i < carton1.length; i++) {
+        if (bolilla == carton1[i].outerText) {
+            carton1[i].style.backgroundColor = 'rgb(255, 87, 51)';
+            carton1.splice(i, 1)
+            if (carton1.length === 0) {
+                labelCarton1.innerHTML = "CARTÓN GANADOR"
+            }
+        }
+    }
+
+    for (let i = 0; i < carton2.length; i++) {
+        if (bolilla == carton2[i].outerText) {
+            carton2[i].style.backgroundColor = 'rgb(255, 87, 51)';
+            carton2.splice(i, 1)
+            if (carton2.length === 0) {
+                labelCarton2.innerHTML = "CARTÓN GANADOR"
+            }
+        }
+    }
+
+    for (let i = 0; i < carton3.length; i++) {
+        if (bolilla == carton3[i].outerText) {
+            carton3[i].style.backgroundColor = 'rgb(255, 87, 51)';
+            carton3.splice(i, 1)
+            if (carton3.length === 0) {
+                labelCarton3.innerHTML = "CARTÓN GANADOR"
             }
         }
     }
