@@ -3,6 +3,6 @@
     public interface IBingoService
     {
         int[,] CrearCarton();
-        public int LanzarBolilla();
+        public void GuardarHistorialBolilla();
     }
 }

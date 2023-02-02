@@ -10,6 +10,7 @@ builder.Services.AddControllersWithViews();
 //INYECCIÓN DE DEPENDENCIAS.
 builder.Services.AddScoped<IBingoService, BingoService>();
 
+//EF CONFIGURATION.
 builder.Services.AddDbContext<BingoContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("conection"));

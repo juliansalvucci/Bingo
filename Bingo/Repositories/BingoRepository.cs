@@ -136,20 +136,9 @@ namespace Bingo.Repositories
             return carton;
         }
 
-        public int LanzarBolilla()
+        public void GuardarHistorialBolilla()
         {
-            int min = 1;
-            int max = 90;
-
-            Random rnd = new Random();
-            return rnd.Next(min, max + 1);
-        }
-
-        public void Sortear(List<int> carton)
-        {
-            var bolilla = LanzarBolilla();
-
-            carton.Contains(bolilla);
+            
         }
     }
 }

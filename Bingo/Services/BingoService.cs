@@ -11,11 +11,10 @@ namespace Bingo.Services
             return carton;
         }
 
-        public int LanzarBolilla() 
+        public void GuardarHistorialBolilla() 
         { 
             var repository = new BingoRepository();
-            var bolilla = repository.LanzarBolilla();
-            return bolilla;
+            repository.GuardarHistorialBolilla();
         }
     }
 }
