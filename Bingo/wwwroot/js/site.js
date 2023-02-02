@@ -1,9 +1,11 @@
 ﻿const carton1 = Array.from(document.getElementsByClassName('celdaCarton1'));
 const carton2 = Array.from(document.getElementsByClassName('celdaCarton2'));
 const carton3 = Array.from(document.getElementsByClassName('celdaCarton3'));
+const carton4 = Array.from(document.getElementsByClassName('celdaCarton4'));
 const labelCarton1 = document.getElementById("labelCarton1");
 const labelCarton2 = document.getElementById("labelCarton2");
 const labelCarton3 = document.getElementById("labelCarton3");
+const labelCarton4 = document.getElementById("labelCarton4");
 const label = document.getElementById("label1");
 
 
@@ -43,6 +45,16 @@ async function getCarton(bolilla) {
             carton3.splice(i, 1)
             if (carton3.length === 0) {
                 labelCarton3.innerHTML = "CARTÓN GANADOR"
+            }
+        }
+    }
+
+    for (let i = 0; i < carton4.length; i++) {
+        if (bolilla == carton4[i].outerText) {
+            carton4[i].style.backgroundColor = 'rgb(255, 87, 51)';
+            carton4.splice(i, 1)
+            if (carton4.length === 0) {
+                labelCarton4.innerHTML = "CARTÓN GANADOR"
             }
         }
     }

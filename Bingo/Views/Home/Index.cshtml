@@ -48,6 +48,21 @@
         }
     }
 </label>
+<br />
+<label id="labelCarton4"></label>
+<label class="text-center carton4">
+    @foreach (var item in Model.Carton4)
+    {
+        @if (item == 0)
+        {
+            <label class="celdaVaciaCarton4"></label>
+        }
+        else
+        {
+            <label class="celdaCarton4">@item</label>
+        }
+    }
+</label>
 <br/>
 <div>
     <button type="button" class="btn btn-primary" onclick="test()">Sortear</button>

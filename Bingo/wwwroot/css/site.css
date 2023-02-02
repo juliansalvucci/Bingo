@@ -17,7 +17,7 @@ body {
   margin-bottom: 60px;
 }
 
-.carton1, .carton2, .carton3 {
+.carton1, .carton2, .carton3, .carton4 {
     display: grid;
     grid-template-columns: auto auto auto auto auto auto auto auto auto;
     grid-row-gap: 0px;
@@ -26,7 +26,7 @@ body {
     margin: 0;
 }
 
-.celdaCarton1, .celdaCarton2, .celdaCarton3 {
+.celdaCarton1, .celdaCarton2, .celdaCarton3, .celdaCarton4 {
     color: black;
     font-weight: bold;
     background-color: white;
@@ -37,7 +37,7 @@ body {
     margin: 0px;
 }
 
-.celdaVaciaCarton1, .celdaVaciaCarton2, .celdaVaciaCarton3 {
+.celdaVaciaCarton1, .celdaVaciaCarton2, .celdaVaciaCarton3, .celdaVaciaCarton4 {
     color: cornflowerblue;
     background-color: cornflowerblue;
     border-color: black;

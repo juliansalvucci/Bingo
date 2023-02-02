@@ -1,4 +1,6 @@
+using Bingo.Contexts;
 using Bingo.Services;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +9,11 @@ builder.Services.AddControllersWithViews();
 
 //INYECCIÓN DE DEPENDENCIAS.
 builder.Services.AddScoped<IBingoService, BingoService>();
+
+builder.Services.AddDbContext<BingoContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("conection"));
+});
 
 var app = builder.Build();
 

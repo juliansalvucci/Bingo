@@ -21,6 +21,7 @@ namespace Bingo.Controllers
             viewModel.Carton1 = _bingoService.CrearCarton();
             viewModel.Carton2 = _bingoService.CrearCarton();
             viewModel.Carton3 = _bingoService.CrearCarton();
+            viewModel.Carton4 = _bingoService.CrearCarton();
             return View(viewModel);
         }
 
