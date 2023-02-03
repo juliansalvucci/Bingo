@@ -1,10 +1,20 @@
-﻿using Bingo.Models;
+﻿using Bingo.Contexts;
+using Bingo.Models;
 using System;
 
 namespace Bingo.Repositories
 {
     public class BingoRepository
     {
+        public BingoContext bc { get; set; }
+
+        public BingoRepository(){}
+
+        public BingoRepository(BingoContext bc)
+        {
+            this.bc = bc;
+        }
+
         public int[,] CrearCarton()
         {
             var carton = new int[3, 9];
@@ -138,7 +148,7 @@ namespace Bingo.Repositories
 
         public void GuardarHistorialBolilla()
         {
-            
+            bc.SaveChangesAsync();
         }
     }
 }

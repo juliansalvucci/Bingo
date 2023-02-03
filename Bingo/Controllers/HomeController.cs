@@ -25,6 +25,11 @@ namespace Bingo.Controllers
             return View(viewModel);
         }
 
+        public void GuardarHistorialBolillero()
+        {
+
+        }
+
         public IActionResult Privacy()
         {
             return View();
