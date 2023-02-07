@@ -17,7 +17,7 @@ async function test() {
 }
 
 async function GuardarHistorialBolillero() {
-    fetch('https://localhost:7185/api/bingo')
+    fetch('https://localhost:7185/api/bingo/test')
         .then(response => response.json())
         .then(data => console.log(data));
 }
