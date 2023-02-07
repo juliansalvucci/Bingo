@@ -1,18 +1,19 @@
 ﻿using Bingo.Contexts;
 using Bingo.Models;
+using Microsoft.AspNetCore.Mvc;
 using System;
 
 namespace Bingo.Repositories
 {
     public class BingoRepository
     {
-        public BingoContext bc { get; set; }
+        private BingoContext _bingoContext { get; set; }
 
         public BingoRepository(){}
 
-        public BingoRepository(BingoContext bc)
+        public BingoRepository(BingoContext bingoContext)
         {
-            this.bc = bc;
+            _bingoContext = bingoContext;
         }
 
         public int[,] CrearCarton()
@@ -146,9 +147,10 @@ namespace Bingo.Repositories
             return carton;
         }
 
-        public void GuardarHistorialBolilla()
+        public async void GuardarHistorialBolilla(HistorialBolillero historialBolillero)
         {
-            bc.SaveChangesAsync();
+            _bingoContext.Add(historialBolillero);
+            await _bingoContext.SaveChangesAsync();
         }
     }
 }

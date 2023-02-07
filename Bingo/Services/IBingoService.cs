@@ -1,8 +1,10 @@
-﻿namespace Bingo.Services
+﻿using Bingo.Models;
+
+namespace Bingo.Services
 {
     public interface IBingoService
     {
         int[,] CrearCarton();
-        public void GuardarHistorialBolilla();
+        public void GuardarHistorialBolilla(HistorialBolillero historial);
     }
 }

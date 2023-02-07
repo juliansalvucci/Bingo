@@ -1,4 +1,5 @@
-﻿using Bingo.Repositories;
+﻿using Bingo.Models;
+using Bingo.Repositories;
 
 namespace Bingo.Services
 {
@@ -11,10 +12,10 @@ namespace Bingo.Services
             return carton;
         }
 
-        public void GuardarHistorialBolilla() 
+        public void GuardarHistorialBolilla(HistorialBolillero historialBolillero) 
         { 
             var repository = new BingoRepository();
-            repository.GuardarHistorialBolilla();
+            repository.GuardarHistorialBolilla(historialBolillero);
         }
     }
 }
