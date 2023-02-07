@@ -16,6 +16,7 @@ builder.Services.AddDbContext<BingoContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("conection"));
 });
 
+
 var app = builder.Build();
 
 

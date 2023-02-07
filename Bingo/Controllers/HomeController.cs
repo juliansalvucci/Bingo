@@ -1,4 +1,5 @@
-﻿using Bingo.Models;
+﻿using Bingo.Controllers.api;
+using Bingo.Models;
 using Bingo.Services;
 using Bingo.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -25,9 +26,10 @@ namespace Bingo.Controllers
             return View(viewModel);
         }
 
-        public void GuardarHistorialBolillero()
+        [HttpPost]
+        public IActionResult GuardarHistorialBolillero()
         {
-
+            return View();
         }
 
         public IActionResult Privacy()

@@ -16,6 +16,13 @@ async function test() {
     getCarton(bolilla);
 }
 
+async function GuardarHistorialBolillero() {
+    fetch('https://localhost:7185/api/bingo')
+        .then(response => response.json())
+        .then(data => console.log(data));
+}
+
+GuardarHistorialBolillero()
 
 async function getCarton(bolilla) {
 
