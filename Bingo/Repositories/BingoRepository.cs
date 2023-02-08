@@ -7,15 +7,6 @@ namespace Bingo.Repositories
 {
     public class BingoRepository
     {
-        private BingoContext _bingoContext { get; set; }
-
-        public BingoRepository(){}
-
-        public BingoRepository(BingoContext bingoContext)
-        {
-            _bingoContext = bingoContext;
-        }
-
         public int[,] CrearCarton()
         {
             var carton = new int[3, 9];
@@ -149,8 +140,11 @@ namespace Bingo.Repositories
 
         public async void GuardarHistorialBolilla(HistorialBolillero historialBolillero)
         {
-            _bingoContext.Add(historialBolillero);
-            await _bingoContext.SaveChangesAsync();
+            using (BingoContext _bingoContext = new BingoContext())
+            {
+                _bingoContext.HistorialBolilleros.Add(historialBolillero);
+                _bingoContext.SaveChanges();
+            }   
         }
     }
 }

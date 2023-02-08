@@ -16,17 +16,12 @@ namespace Bingo.Controllers.api
             _bingoService = bingoService;
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("GuardarHistorialBolilla")]
-        public async Task<ActionResult> GuardarHistorialBolilla(int bolilla = 2)
+        public async Task<ActionResult> GuardarHistorialBolilla(HistorialBolillero historialBolillero)
         {
             try
             {
-                var historialBolillero = new HistorialBolillero();
-
-                historialBolillero.FechaYHora = DateTime.Now;
-                historialBolillero.NumeroDeBolilla = bolilla;
-
                 _bingoService.GuardarHistorialBolilla(historialBolillero);
 
                 return Ok("Historial de bolilla actualizado con éxito");
