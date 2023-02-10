@@ -54,6 +54,7 @@ async function sortear(bolilla) {
             carton2.splice(i, 1)
             if (carton2.length === 0) {
                 labelCarton2.innerHTML = "CARTÓN GANADOR"
+                btnLanzarBolilla.disabled = true;
             }
         }
     }
@@ -64,6 +65,7 @@ async function sortear(bolilla) {
             carton3.splice(i, 1)
             if (carton3.length === 0) {
                 labelCarton3.innerHTML = "CARTÓN GANADOR"
+                btnLanzarBolilla.disabled = true;
             }
         }
     }
@@ -74,6 +76,7 @@ async function sortear(bolilla) {
             carton4.splice(i, 1)
             if (carton4.length === 0) {
                 labelCarton4.innerHTML = "CARTÓN GANADOR"
+                btnLanzarBolilla.disabled = true;
             }
         }
     }
