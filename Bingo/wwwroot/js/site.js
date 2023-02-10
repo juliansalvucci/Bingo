@@ -9,11 +9,11 @@ const labelCarton4 = document.getElementById("labelCarton4");
 const label = document.getElementById("label1");
 
 
-async function sortear() {
+async function LanzarBolilla() {
     const numero = Math.random() * (90 - 0);
     const bolilla = numero.toFixed(0);
     label.innerHTML = bolilla;
-    getCarton(bolilla);
+    sortear(bolilla);
     GuardarHistorialBolillero(bolilla);
 }
 
@@ -34,7 +34,7 @@ async function GuardarHistorialBolillero(bolilla) {
 }
 
 
-async function getCarton(bolilla) {
+async function sortear(bolilla) {
 
     for (let i = 0; i < carton1.length; i++) {
         if (bolilla == carton1[i].outerText) {
