@@ -2,6 +2,7 @@
 const carton2 = Array.from(document.getElementsByClassName('celdaCarton2'));
 const carton3 = Array.from(document.getElementsByClassName('celdaCarton3'));
 const carton4 = Array.from(document.getElementsByClassName('celdaCarton4'));
+const btnLanzarBolilla = document.getElementById("btnLanzarBolilla");
 const labelCarton1 = document.getElementById("labelCarton1");
 const labelCarton2 = document.getElementById("labelCarton2");
 const labelCarton3 = document.getElementById("labelCarton3");
@@ -42,6 +43,7 @@ async function sortear(bolilla) {
             carton1.splice(i, 1)
             if (carton1.length === 0) {
                 labelCarton1.innerHTML = "CARTÓN GANADOR"
+                btnLanzarBolilla.disabled = true;
             }
         }
     }
