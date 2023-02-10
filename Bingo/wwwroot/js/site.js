@@ -9,20 +9,30 @@ const labelCarton4 = document.getElementById("labelCarton4");
 const label = document.getElementById("label1");
 
 
-async function test() {
+async function sortear() {
     const numero = Math.random() * (90 - 0);
     const bolilla = numero.toFixed(0);
     label.innerHTML = bolilla;
     getCarton(bolilla);
+    GuardarHistorialBolillero(bolilla);
 }
 
-async function GuardarHistorialBolillero() {
-    fetch('https://localhost:7185/api/bingo/test')
-        .then(response => response.json())
-        .then(data => console.log(data));
+
+async function GuardarHistorialBolillero(bolilla) {
+    let body = {
+        fechaYHora: "foo",
+        numeroDeBolilla: parseInt(bolilla),
+    }
+    fetch('https://localhost:7185/api/bingo/GuardarHistorialBolilla',{
+        method: "POST",
+        headers: { "Content-type": "application/json; charset=UTF-8" },
+        body: JSON.stringify(body),
+    })
+    .then(response => response.json())
+    .then(json => console.log(json))
+    .catch (err => console.log(err));
 }
 
-GuardarHistorialBolillero()
 
 async function getCarton(bolilla) {
 
