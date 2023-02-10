@@ -20,7 +20,7 @@ async function sortear() {
 
 async function GuardarHistorialBolillero(bolilla) {
     let body = {
-        fechaYHora: "foo",
+        fechaYHora: new Date().toLocaleString("es-ES"),
         numeroDeBolilla: parseInt(bolilla),
     }
     fetch('https://localhost:7185/api/bingo/GuardarHistorialBolilla',{
