@@ -8,16 +8,13 @@ namespace Bingo.Contexts
         public BingoContext() { }
         public BingoContext(DbContextOptions<BingoContext> options): base(options) { }
         public DbSet<HistorialBolillero> HistorialBolilleros { get; set; }
+        public DbSet<HistorialCartones> HistorialCartones { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                
                 optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=BingoTest;Trusted_Connection=True;");
-              
-                
-                
             }
         }
     }

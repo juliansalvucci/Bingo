@@ -40,6 +40,34 @@ namespace Bingo.Migrations
 
                     b.ToTable("HistorialBolilleros");
                 });
+
+            modelBuilder.Entity("Bingo.Models.HistorialCartones", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("Carton1")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Carton2")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Carton3")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Carton4")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FechaYHora")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("HistorialCartones");
+                });
 #pragma warning restore 612, 618
         }
     }
