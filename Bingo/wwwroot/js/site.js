@@ -9,6 +9,10 @@ const labelCarton3 = document.getElementById("labelCarton3");
 const labelCarton4 = document.getElementById("labelCarton4");
 const label = document.getElementById("label1");
 
+const cartonesGnadores = []
+
+
+
 
 async function LanzarBolilla() {
     const numero = Math.random() * (90 - 0);
@@ -34,10 +38,14 @@ async function GuardarHistorialBolillero(bolilla) {
     .catch (err => console.log(err));
 }
 
-async function GuardarHistorialCartones(bolilla) {
+async function GuardarHistorialCartones() {
+    console.log('historial cartones')
     let body = {
         fechaYHora: new Date().toLocaleString("es-ES"),
-        numeroDeBolilla: parseInt(bolilla),
+        carton1: null,
+        carton2: null,
+        carton3: null,
+        carton4: null,
     }
     fetch('https://localhost:7185/api/bingo/GuardarHistorialCartones', {
         method: "POST",
@@ -49,8 +57,9 @@ async function GuardarHistorialCartones(bolilla) {
         .catch(err => console.log(err));
 }
 
-async function sortear(bolilla) {
+GuardarHistorialCartones()
 
+async function sortear(bolilla) {
     for (let i = 0; i < carton1.length; i++) {
         if (bolilla == carton1[i].outerText) {
             carton1[i].style.backgroundColor = 'rgb(255, 87, 51)';
@@ -58,6 +67,7 @@ async function sortear(bolilla) {
             if (carton1.length === 0) {
                 labelCarton1.innerHTML = "CARTÓN GANADOR"
                 btnLanzarBolilla.disabled = true;
+                cartonesGnadores.push(1);
             }
         }
     }
@@ -69,6 +79,7 @@ async function sortear(bolilla) {
             if (carton2.length === 0) {
                 labelCarton2.innerHTML = "CARTÓN GANADOR"
                 btnLanzarBolilla.disabled = true;
+                cartonesGnadores.push(2);
             }
         }
     }
@@ -80,6 +91,7 @@ async function sortear(bolilla) {
             if (carton3.length === 0) {
                 labelCarton3.innerHTML = "CARTÓN GANADOR"
                 btnLanzarBolilla.disabled = true;
+                cartonesGnadores.push(3);
             }
         }
     }
@@ -91,8 +103,21 @@ async function sortear(bolilla) {
             if (carton4.length === 0) {
                 labelCarton4.innerHTML = "CARTÓN GANADOR"
                 btnLanzarBolilla.disabled = true;
+                cartonesGnadores.push(3);
             }
         }
+    }
+
+
+}
+
+async function generarhistorialBolillero() {
+    let body = {
+        fechaYHora: new Date().toLocaleString("es-ES"),
+        carton1: null,
+        carton2: null,
+        carton3: null,
+        carton4: null,
     }
 }
 
