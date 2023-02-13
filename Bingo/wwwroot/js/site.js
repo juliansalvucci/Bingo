@@ -34,6 +34,20 @@ async function GuardarHistorialBolillero(bolilla) {
     .catch (err => console.log(err));
 }
 
+async function GuardarHistorialCartones(bolilla) {
+    let body = {
+        fechaYHora: new Date().toLocaleString("es-ES"),
+        numeroDeBolilla: parseInt(bolilla),
+    }
+    fetch('https://localhost:7185/api/bingo/GuardarHistorialCartones', {
+        method: "POST",
+        headers: { "Content-type": "application/json; charset=UTF-8" },
+        body: JSON.stringify(body),
+    })
+        .then(response => response.json())
+        .then(json => console.log(json))
+        .catch(err => console.log(err));
+}
 
 async function sortear(bolilla) {
 

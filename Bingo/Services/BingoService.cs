@@ -17,5 +17,11 @@ namespace Bingo.Services
             var repository = new BingoRepository();
             repository.GuardarHistorialBolilla(historialBolillero);
         }
+
+        public void GuardarHistorialCartones(HistorialCartones historialCartones)
+        {
+            var repository = new BingoRepository();
+            repository.GuardarHistorialCartones(historialCartones);
+        }
     }
 }

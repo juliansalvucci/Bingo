@@ -31,5 +31,21 @@ namespace Bingo.Controllers.api
                 return BadRequest("Error al guardar el historial de bolilla");
             }
         }
+
+        [HttpPost]
+        [Route("GuardarHistorialCartones")]
+        public async Task<ActionResult> GuardarHistorialCartones(HistorialCartones historialCartones)
+        {
+            try
+            {
+                _bingoService.GuardarHistorialCartones(historialCartones);
+
+                return Ok("Historial de cartones actualizado con éxito");
+            }
+            catch (Exception)
+            {
+                return BadRequest("Error al guardar el historial de cartones");
+            }
+        }
     }
 }

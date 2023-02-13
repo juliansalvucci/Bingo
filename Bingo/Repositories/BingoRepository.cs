@@ -146,5 +146,14 @@ namespace Bingo.Repositories
                 _bingoContext.SaveChanges();
             }   
         }
+
+        public async void GuardarHistorialCartones(HistorialCartones historialCartones)
+        {
+            using(BingoContext _bingoContext = new BingoContext())
+            {
+                _bingoContext.HistorialCartones.Add(historialCartones);
+                _bingoContext.SaveChanges();
+            }
+        }
     }
 }
