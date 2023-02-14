@@ -39,14 +39,14 @@ async function GuardarHistorialBolillero(bolilla) {
 }
 
 async function GuardarHistorialCartones() {
-    console.log('historial cartones')
     let body = {
         fechaYHora: new Date().toLocaleString("es-ES"),
-        carton1: null,
-        carton2: null,
-        carton3: null,
-        carton4: null,
+        carton1: cartonesGnadores[0],
+        carton2: cartonesGnadores[1],
+        carton3: cartonesGnadores[2],
+        carton4: cartonesGnadores[3],
     }
+    console.log('historial cartones',body)
     fetch('https://localhost:7185/api/bingo/GuardarHistorialCartones', {
         method: "POST",
         headers: { "Content-type": "application/json; charset=UTF-8" },
@@ -68,6 +68,7 @@ async function sortear(bolilla) {
                 labelCarton1.innerHTML = "CARTÓN GANADOR"
                 btnLanzarBolilla.disabled = true;
                 cartonesGnadores.push(1);
+                GuardarHistorialCartones()
             }
         }
     }
@@ -80,6 +81,7 @@ async function sortear(bolilla) {
                 labelCarton2.innerHTML = "CARTÓN GANADOR"
                 btnLanzarBolilla.disabled = true;
                 cartonesGnadores.push(2);
+                GuardarHistorialCartones()
             }
         }
     }
@@ -92,6 +94,7 @@ async function sortear(bolilla) {
                 labelCarton3.innerHTML = "CARTÓN GANADOR"
                 btnLanzarBolilla.disabled = true;
                 cartonesGnadores.push(3);
+                GuardarHistorialCartones()
             }
         }
     }
@@ -104,6 +107,7 @@ async function sortear(bolilla) {
                 labelCarton4.innerHTML = "CARTÓN GANADOR"
                 btnLanzarBolilla.disabled = true;
                 cartonesGnadores.push(3);
+                GuardarHistorialCartones()
             }
         }
     }
@@ -114,11 +118,13 @@ async function sortear(bolilla) {
 async function generarhistorialBolillero() {
     let body = {
         fechaYHora: new Date().toLocaleString("es-ES"),
-        carton1: null,
+        carton1: cartonesGnadores[1],
         carton2: null,
         carton3: null,
         carton4: null,
     }
+
+    
 }
 
 
