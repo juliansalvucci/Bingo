@@ -9,7 +9,7 @@ const labelCarton3 = document.getElementById("labelCarton3");
 const labelCarton4 = document.getElementById("labelCarton4");
 const label = document.getElementById("label1");
 
-const cartonesGnadores = []
+let cartonesGnadores = []
 
 
 
@@ -106,7 +106,7 @@ async function sortear(bolilla) {
             if (carton4.length === 0) {
                 labelCarton4.innerHTML = "CARTÓN GANADOR"
                 btnLanzarBolilla.disabled = true;
-                cartonesGnadores.push(3);
+                cartonesGnadores.push(4);
                 GuardarHistorialCartones()
             }
         }
