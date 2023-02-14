@@ -11,7 +11,6 @@ const label = document.getElementById("label1");
 
 let cartonesGnadores = []
 
-
 async function LanzarBolilla() {
     const numero = Math.random() * (90 - 0);
     const bolilla = numero.toFixed(0);
@@ -19,7 +18,6 @@ async function LanzarBolilla() {
     sortear(bolilla);
     GuardarHistorialBolillero(bolilla);
 }
-
 
 async function GuardarHistorialBolillero(bolilla) {
     let body = {
@@ -44,7 +42,6 @@ async function GuardarHistorialCartones() {
         carton3: cartonesGnadores[2],
         carton4: cartonesGnadores[3],
     }
-    console.log('historial cartones',body)
     fetch('https://localhost:7185/api/bingo/GuardarHistorialCartones', {
         method: "POST",
         headers: { "Content-type": "application/json; charset=UTF-8" },
@@ -55,14 +52,13 @@ async function GuardarHistorialCartones() {
         .catch(err => console.log(err));
 }
 
-
 async function sortear(bolilla) {
     for (let i = 0; i < carton1.length; i++) {
         if (bolilla == carton1[i].outerText) {
             carton1[i].style.backgroundColor = 'rgb(255, 87, 51)';
             carton1.splice(i, 1)
             if (carton1.length === 0) {
-                labelCarton1.innerHTML = "CARTÓN GANADOR"
+                labelCarton1.innerHTML = "CARTÓN LLENO"
                 btnLanzarBolilla.disabled = true;
                 cartonesGnadores.push(1);
                 GuardarHistorialCartones()
@@ -75,7 +71,7 @@ async function sortear(bolilla) {
             carton2[i].style.backgroundColor = 'rgb(255, 87, 51)';
             carton2.splice(i, 1)
             if (carton2.length === 0) {
-                labelCarton2.innerHTML = "CARTÓN GANADOR"
+                labelCarton2.innerHTML = "CARTÓN LLENO"
                 btnLanzarBolilla.disabled = true;
                 cartonesGnadores.push(2);
                 GuardarHistorialCartones()
@@ -88,7 +84,7 @@ async function sortear(bolilla) {
             carton3[i].style.backgroundColor = 'rgb(255, 87, 51)';
             carton3.splice(i, 1)
             if (carton3.length === 0) {
-                labelCarton3.innerHTML = "CARTÓN GANADOR"
+                labelCarton3.innerHTML = "CARTÓN LLENO"
                 btnLanzarBolilla.disabled = true;
                 cartonesGnadores.push(3);
                 GuardarHistorialCartones()
@@ -101,7 +97,7 @@ async function sortear(bolilla) {
             carton4[i].style.backgroundColor = 'rgb(255, 87, 51)';
             carton4.splice(i, 1)
             if (carton4.length === 0) {
-                labelCarton4.innerHTML = "CARTÓN GANADOR"
+                labelCarton4.innerHTML = "CARTÓN LLENO"
                 btnLanzarBolilla.disabled = true;
                 cartonesGnadores.push(4);
                 GuardarHistorialCartones()
