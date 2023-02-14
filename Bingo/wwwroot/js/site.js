@@ -55,7 +55,6 @@ async function GuardarHistorialCartones() {
         .catch(err => console.log(err));
 }
 
-GuardarHistorialCartones()
 
 async function sortear(bolilla) {
     for (let i = 0; i < carton1.length; i++) {
