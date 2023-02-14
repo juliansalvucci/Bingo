@@ -12,8 +12,6 @@ const label = document.getElementById("label1");
 let cartonesGnadores = []
 
 
-
-
 async function LanzarBolilla() {
     const numero = Math.random() * (90 - 0);
     const bolilla = numero.toFixed(0);
@@ -111,21 +109,9 @@ async function sortear(bolilla) {
             }
         }
     }
-
-
 }
 
-async function generarhistorialBolillero() {
-    let body = {
-        fechaYHora: new Date().toLocaleString("es-ES"),
-        carton1: cartonesGnadores[1],
-        carton2: null,
-        carton3: null,
-        carton4: null,
-    }
 
-    
-}
 
 
 
