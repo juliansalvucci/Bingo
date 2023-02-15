@@ -35,7 +35,7 @@
 </div>
 <br />
 <label id="labelCarton3"></label>
-<label class="text-center carton3">
+<div class="text-center carton3">
     @foreach (var item in Model.Carton3)
     {
         @if (item == 0)
@@ -47,10 +47,10 @@
             <label class="celdaCarton3">@item</label>
         }
     }
-</label>
+</div>
 <br />
 <label id="labelCarton4"></label>
-<label class="text-center carton4">
+<div class="text-center carton4">
     @foreach (var item in Model.Carton4)
     {
         @if (item == 0)
@@ -62,9 +62,10 @@
             <label class="celdaCarton4">@item</label>
         }
     }
-</label>
+</div>
 <br/>
 <button class="btn btn-primary" onclick="LanzarBolilla()" id="btnLanzarBolilla">Lanzar bolilla</button>
+<label>Bolilla</label>
 <label id="label1"></label>
 
 @section Scripts{
