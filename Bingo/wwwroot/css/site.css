@@ -23,7 +23,10 @@ body {
     grid-row-gap: 0px;
     grid-column-gap: 0px;
     width: 60%;
-    margin: 0;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 .celdaCarton1, .celdaCarton2, .celdaCarton3, .celdaCarton4 {
@@ -47,10 +50,44 @@ body {
     margin: 0px
 }
 
-.principal{
-    width:100%;
-    margin-left:7%;
+.panelContainer {
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+/*Clase utilizada en Layout.cshtml*/
+.principal {
+    width: 100%;
+    margin-left: 7%;
 }
 
 
+.panel {
+    font-weight: bold;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
 
+#btnLanzarBolilla {
+    font-weight: bold;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+#labelCarton1, #labelCarton2, #labelCarton3, #labelCarton4 {
+    font-weight: bold;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.panelSorteo{
+    display:flex;
+}
