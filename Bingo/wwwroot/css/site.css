@@ -22,7 +22,7 @@ body {
     grid-template-columns: auto auto auto auto auto auto auto auto auto;
     grid-row-gap: 0px;
     grid-column-gap: 0px;
-    width: 40%;
+    width: 60%;
     margin: 0;
 }
 
@@ -47,7 +47,10 @@ body {
     margin: 0px
 }
 
-
+.principal{
+    width:100%;
+    margin-left:7%;
+}
 
 
 
