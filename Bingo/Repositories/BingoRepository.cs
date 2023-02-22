@@ -1,7 +1,5 @@
 ﻿using Bingo.Contexts;
 using Bingo.Models;
-using Microsoft.AspNetCore.Mvc;
-using System;
 
 namespace Bingo.Repositories
 {
@@ -51,17 +49,9 @@ namespace Bingo.Repositories
                 }
             }
 
+            //Una vez generado el cartón, se procede a generar los espacios vacios.
             var cartonConEspaciosVacios = GenerarVacios(carton);
-            var cartonEnLista = new List<int>();
-
-            for (var columna = 0; columna < 9; columna++)
-            {
-                for (var fila = 0; fila < 3; fila++)
-                {
-                    cartonEnLista.Add(cartonConEspaciosVacios[fila, columna]);
-                }
-            }
-
+            
             return cartonConEspaciosVacios;
         }
 
