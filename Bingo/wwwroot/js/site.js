@@ -2,12 +2,14 @@
 const carton2 = Array.from(document.getElementsByClassName('celdaCarton2'));
 const carton3 = Array.from(document.getElementsByClassName('celdaCarton3'));
 const carton4 = Array.from(document.getElementsByClassName('celdaCarton4'));
+const labelCartonesGanadores = document.getElementById("cartonesGanadores");
 const btnLanzarBolilla = document.getElementById("btnLanzarBolilla");
 const labelCarton1 = document.getElementById("labelCarton1");
 const labelCarton2 = document.getElementById("labelCarton2");
 const labelCarton3 = document.getElementById("labelCarton3");
 const labelCarton4 = document.getElementById("labelCarton4");
 const label = document.getElementById("label1");
+
 
 let cartonesGnadores = []
 
@@ -42,14 +44,19 @@ async function GuardarHistorialCartones() {
         carton3: cartonesGnadores[2],
         carton4: cartonesGnadores[3],
     }
+
     fetch('https://localhost:7185/api/bingo/GuardarHistorialCartones', {
         method: "POST",
         headers: { "Content-type": "application/json; charset=UTF-8" },
         body: JSON.stringify(body),
     })
         .then(response => response.json())
-        .then(json => console.log(json))
+        .then(json => console.log(json), mostrarCartonesGanadores())
         .catch(err => console.log(err));
+}
+
+async function mostrarCartonesGanadores() {
+   labelCartonesGanadores.innerHTML = cartonesGnadores; 
 }
 
 async function sortear(bolilla) {

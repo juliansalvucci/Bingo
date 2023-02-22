@@ -5,7 +5,7 @@
 }
 <div class="row">
     <div class="col-sm-6">
-        <label id="labelCarton1"></label>
+        <h5 id="labelCarton1"></h5>
         <div class="text-center carton1">
            @foreach (var item in Model.Carton1)
            {
@@ -22,7 +22,7 @@
     </div>
 
     <div class="col-sm-6">
-        <label id="labelCarton2"></label>
+        <h5 id="labelCarton2"></h5>
         <div class="text-center carton2">
            @foreach (var item in Model.Carton2)
            {
@@ -40,7 +40,7 @@
 </div>
 <div class="row">
     <div class="col-sm-6">
-        <label id="labelCarton3"></label>
+        <h5 id="labelCarton3"></h5>
         <div class="text-center carton3">
             @foreach (var item in Model.Carton3)
             {
@@ -57,7 +57,7 @@
     </div>
 
     <div class="col-sm-6">
-        <label id="labelCarton4"></label>
+        <h5 id="labelCarton4"></h5>
         <div class="text-center carton4">
             @foreach (var item in Model.Carton4)
             {
@@ -77,10 +77,16 @@
 <br/>
 <div class="panelSorteo">
     <button class="btn btn-primary" onclick="LanzarBolilla()" id="btnLanzarBolilla">Lanzar bolilla</button>
-    <label class="panel">Bolilla: </label>
-    <label id="label1" class="panel"></label>
+    <br />
+    <div class="labelBolillaSection">
+        <h4 class="panel">Bolilla: </h4>
+        <h4 id="label1" class="panel"></h4>
+    </div>
+    <div class="labelCartonesGanadoresSection">
+        <h4 class="panel">Cartones ganadores: </h4>
+        <h4 id="cartonesGanadores" class="panel"></h4>
+    </div>
 </div>
-
 
 
 @section Scripts{

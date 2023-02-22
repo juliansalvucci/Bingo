@@ -22,7 +22,7 @@ body {
     grid-template-columns: auto auto auto auto auto auto auto auto auto;
     grid-row-gap: 0px;
     grid-column-gap: 0px;
-    width: 60%;
+    width: 65%;
     margin-left: 2%;
     margin-right: 2%;
     margin-top: 2%;
@@ -59,17 +59,17 @@ body {
 
 /*Clase utilizada en Layout.cshtml*/
 .principal {
-    width: 100%;
+    width: 95%;
     margin-left: 7%;
 }
 
 
 .panel {
     font-weight: bold;
-    margin-left: 2%;
-    margin-right: 2%;
-    margin-top: 2%;
-    margin-bottom: 2%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
 
 #btnLanzarBolilla {
@@ -77,7 +77,7 @@ body {
     margin-left: 1%;
     margin-right: 1%;
     margin-top: 1%;
-    margin-bottom: 1%;
+    margin-bottom: 10px;
 }
 
 #labelCarton1, #labelCarton2, #labelCarton3, #labelCarton4 {
@@ -88,6 +88,10 @@ body {
     margin-bottom: 2%;
 }
 
-.panelSorteo{
-    display:flex;
+
+.labelBolillaSection, .labelCartonesGanadoresSection {
+    margin-top:5px;
+    margin-left: 0.5%;
+    width: 50%;
+    display: flex;
 }
