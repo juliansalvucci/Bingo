@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Bingo.Controllers.api
 {
-    //https://localhost:7185/api/bingo/GuardarHistorialBolilla
     [Route("api/[controller]")]
     [ApiController]
     public class BingoController : ControllerBase
@@ -18,7 +17,7 @@ namespace Bingo.Controllers.api
 
         [HttpPost]
         [Route("GuardarHistorialBolilla")]
-        public async Task<ActionResult> GuardarHistorialBolilla(HistorialBolillero historialBolillero)
+        public ActionResult GuardarHistorialBolilla(HistorialBolillero historialBolillero)
         {
             try
             {
@@ -34,13 +33,13 @@ namespace Bingo.Controllers.api
 
         [HttpPost]
         [Route("GuardarHistorialCartones")]
-        public async Task<ActionResult> GuardarHistorialCartones(HistorialCartones historialCartones)
+        public ActionResult GuardarHistorialCartones(HistorialCartones historialCartones)
         {
             try
             {
                 _bingoService.GuardarHistorialCartones(historialCartones);
 
-                return Ok("Historial de cartones actualizado con éxito");
+                 return Ok("Historial de cartones actualizado con éxito");
             }
             catch (Exception)
             {

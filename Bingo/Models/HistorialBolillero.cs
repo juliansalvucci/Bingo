@@ -3,7 +3,7 @@
     public class HistorialBolillero
     {
         public int Id { get; set; }
-        public String FechaYHora { get; set; }
+        public string FechaYHora { get; set; } = "";
         public int NumeroDeBolilla { get; set; }
     }
 }

@@ -128,12 +128,13 @@ namespace Bingo.Repositories
             return carton;
         }
 
+
         public async void GuardarHistorialBolilla(HistorialBolillero historialBolillero)
         {
             using (BingoContext _bingoContext = new BingoContext())
             {
-                _bingoContext.HistorialBolilleros.Add(historialBolillero);
-                _bingoContext.SaveChanges();
+                await _bingoContext.HistorialBolilleros.AddAsync(historialBolillero);
+                await _bingoContext.SaveChangesAsync();
             }   
         }
 
@@ -141,8 +142,8 @@ namespace Bingo.Repositories
         {
             using(BingoContext _bingoContext = new BingoContext())
             {
-                _bingoContext.HistorialCartones.Add(historialCartones);
-                _bingoContext.SaveChanges();
+                await _bingoContext.HistorialCartones.AddAsync(historialCartones);
+                await _bingoContext.SaveChangesAsync();
             }
         }
     }

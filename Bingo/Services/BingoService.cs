@@ -13,9 +13,9 @@ namespace Bingo.Services
         }
 
         public void GuardarHistorialBolilla(HistorialBolillero historialBolillero) 
-        { 
+        {
             var repository = new BingoRepository();
-            repository.GuardarHistorialBolilla(historialBolillero);
+            repository.GuardarHistorialBolilla(historialBolillero);   
         }
 
         public void GuardarHistorialCartones(HistorialCartones historialCartones)
