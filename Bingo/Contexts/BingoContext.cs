@@ -7,7 +7,7 @@ namespace Bingo.Contexts
     {
         public BingoContext() { }
         public BingoContext(DbContextOptions<BingoContext> options): base(options) { }
-        public DbSet<HistorialBolillero> HistorialBolilleros { get; set; }
+        public DbSet<HistorialBolillero> HistorialBolillero { get; set; }
         public DbSet<HistorialCartones> HistorialCartones { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
