@@ -1,5 +1,4 @@
-﻿using Bingo.Controllers.api;
-using Bingo.Models;
+﻿using Bingo.Models;
 using Bingo.Services;
 using Bingo.ViewModels;
 using Microsoft.AspNetCore.Mvc;
